@@ -1,12 +1,29 @@
-<div class="main-container flx-center">
-  <div class="content-wrapper">
-    <div class="title"> Corinne veux-tu être ma Valentine</div>
+<div class="main-container">
+  <div class="upper-page-content flx-center">
+    <img *ngIf="volumeOn; else volumeOff" (click)="changeVolume()" src="/sound-on-svgrepo-com.svg"
+         class="clickable"
+         [ngStyle]="{'width': 30 + 'px', 'height': 30 + 'px'}">
+    <ng-template #volumeOff>
+      <img (click)="changeVolume()" src="/mute-volume-svgrepo-com.svg"
+           class="clickable"
+           [ngStyle]="{'width': 30 + 'px', 'height': 30 + 'px'}">
+    </ng-template>
+  </div>
+  <div class="content-wrapper flx-center">
+    <div class="title"> Corinne veux-tu être ma Valentine ?</div>
     <div class="gif-container flx-center">
       <img [src]=this.gifLink alt="giving flowers" style="width: 350px">
     </div>
     <div class="bouttons-container">
-      <button class="yes-boutton">Oui !</button>
-      <button class="no-boutton">Non...</button>
+      <button class="yes-boutton"
+              [ngStyle]="{'width': widthYes + 'px', 'height': heightYes + 'px'}"
+      >Oui !
+      </button>
+      <button class="no-boutton"
+              (click)="actionButton()"
+              [ngStyle]="{'position': isAbsolute ? 'absolute' : 'relative', 'left': positionXNo + 'px', 'top': positionYNo + 'px'}">
+        Non...
+      </button>
     </div>
   </div>
 </div>

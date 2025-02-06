@@ -2,7 +2,17 @@
   width: 100vw;
   height: 100vh;
   background-color: #ffeef7;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
 
+}
+.upper-page-content{
+  grid-column: 3/3;
+
+  .clickable{
+    cursor: pointer;
+  }
 }
 
 .content-wrapper {
@@ -10,6 +20,9 @@
   flex-direction: column;
   gap: 16px;
   width: 490px;
+  grid-column: 2/3;
+  grid-row: 2/3;
+
 
   .title {
     font-family: 'Indie Flower';
@@ -48,5 +61,7 @@
     cursor: pointer;
   }
 }
+
+
 
 
