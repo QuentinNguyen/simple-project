@@ -1,0 +1,45 @@
+.main-container{
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffeef7;
+
+  @media (max-width: 899px){
+    justify-content: normal !important;
+    padding-top: 150px;
+  }
+}
+
+.contents-container{
+  gap: 30px;
+
+  @media (max-width: 899px){
+    img{
+      width: 300px;
+    }
+  }
+  .text{
+    font-family: 'Indie Flower' ;
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #ff6b81;
+    text-align: center;
+
+    @media (max-width: 899px){
+      font-size: 1.75em;
+    }
+  }
+
+  .image{
+    @media (min-width: 900px){
+      img{
+        width: 350px;
+      }
+    }
+
+    @media (max-width: 899px){
+      img{
+        width: 300px;
+      }
+    }
+  }
+}

@@ -1,5 +1,9 @@
+<audio #bgMusic loop muted>
+  <source [src]=this.song>
+</audio>
 <div class="main-container">
   <div class="upper-page-content flx-center">
+    <img class="click-here" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmRxZ3d3MDBvNHB2aHd4aGVqbDA2eXp5OXB2aW82d3pqMWx1YjBhZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YYPTi62yhByNT0MUfQ/giphy.gif">
     <img *ngIf="volumeOn; else volumeOff" (click)="changeVolume()" src="/sound-on-svgrepo-com.svg"
          class="clickable"
          [ngStyle]="{'width': 30 + 'px', 'height': 30 + 'px'}">
@@ -12,16 +16,17 @@
   <div class="content-wrapper flx-center">
     <div class="title"> Corinne veux-tu être ma Valentine ?</div>
     <div class="gif-container flx-center">
-      <img [src]=this.gifLink alt="giving flowers" style="width: 350px">
+      <img class="gif" [src]=this.gifLink alt="giving flowers">
     </div>
     <div class="bouttons-container">
       <button class="yes-boutton"
-              [ngStyle]="{'width': widthYes + 'px', 'height': heightYes + 'px'}"
+              (click)="navigate()"
+              [ngStyle]="{'width': widthYes + 'px', 'height': heightYes + 'px', 'position': absoluteYes ? 'absolute' : 'relative', 'top': absoluteStyle}"
       >Oui !
       </button>
       <button class="no-boutton"
               (click)="actionButton()"
-              [ngStyle]="{'position': isAbsolute ? 'absolute' : 'relative', 'left': positionXNo + 'px', 'top': positionYNo + 'px'}">
+              [ngStyle]="{'position': isAbsolute ? 'absolute' : 'relative', 'left': positionXNo + 'px', 'top': positionYNo + 'px', 'display': absoluteYes ? 'none' : 'block'}">
         Non...
       </button>
     </div>
